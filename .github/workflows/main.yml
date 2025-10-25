@@ -1,11 +1,16 @@
-<publishData>
-<publishProfile profileName="CMST388-UMGC-rgoldfarb1 - Web Deploy" publishMethod="MSDeploy" publishUrl="cmst388-umgc-rgoldfarb1.scm.azurewebsites.net:443" msdeploySite="CMST388-UMGC-rgoldfarb1" userName="$CMST388-UMGC-rgoldfarb1" userPWD="a2E60szQNpBeYEnhkKjPktTo4xwkLoR6NfWwzhBpNAGoBlFk3mpKWNTZKqeR" destinationAppUrl="http://cmst388-umgc-rgoldfarb1.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="https://portal.azure.com" webSystem="WebSites">
-<databases/>
-</publishProfile>
-<publishProfile profileName="CMST388-UMGC-rgoldfarb1 - FTP" publishMethod="FTP" publishUrl="ftps://waws-prod-blu-199.ftp.azurewebsites.windows.net/site/wwwroot" ftpPassiveMode="True" userName="CMST388-UMGC-rgoldfarb1\$CMST388-UMGC-rgoldfarb1" userPWD="a2E60szQNpBeYEnhkKjPktTo4xwkLoR6NfWwzhBpNAGoBlFk3mpKWNTZKqeR" destinationAppUrl="http://cmst388-umgc-rgoldfarb1.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="https://portal.azure.com" webSystem="WebSites">
-<databases/>
-</publishProfile>
-<publishProfile profileName="CMST388-UMGC-rgoldfarb1 - Zip Deploy" publishMethod="ZipDeploy" publishUrl="cmst388-umgc-rgoldfarb1.scm.azurewebsites.net:443" userName="$CMST388-UMGC-rgoldfarb1" userPWD="a2E60szQNpBeYEnhkKjPktTo4xwkLoR6NfWwzhBpNAGoBlFk3mpKWNTZKqeR" destinationAppUrl="http://cmst388-umgc-rgoldfarb1.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="https://portal.azure.com" webSystem="WebSites">
-<databases/>
-</publishProfile>
-</publishData>
+name: Deploy HTML Files to AppServiceCMST388
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v1
+      with:
+        app-name: 'cmst386-rgoldfarb1'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AppServiceCMST388 }}
