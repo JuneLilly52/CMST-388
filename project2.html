@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--in javascript you can make fname and lname alpha only by doing const alphaOnly-->
+<html lang="en">
+<head><title>Project 2</title></head>
+<body>
+    <h1>Registration Form</h1>
+        <form action="registration_page.html" method="post">
+<!--first name and last name - they have a placeholder name - when they click into the box, it will become blank-->
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="Jane" onfocus="this.value=''"><br>
+            <label for="lname">Last Name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe" onfocus="this.value=''"><br><br>
+            
+<!--zip code can be 5 #'s only-->
+            <label for="zipcode">Zipcode:</label><br>
+            <input type="text" id="zipcode" name="zipcode" maxlength="5" size="5"><br>
+
+<!--Address Block with drop down state options-->
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address"><br>
+            <label for="city">City:</label><br>
+            <input type="text" id="city" name="city"><br>
+            <label for="state">State:</label><br>
+            <select id="state" name="state">
+                <option value="">Select a State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select><br>
+<!--Phone Number - no more than 10 digits split into two boxes for the area code and the extension number -->
+        <label for="phone_number">Phone Number:</label><br>
+<!--Area Code has a max of 3 digits-->
+        <input type="text" id="area_code" name="area_code" maxlength="3" size="3">
+<!--Phone number has a max of 3 digits-->
+        <input type="text" id="phone_number" name="phone_number" maxlength=10 size="10"><br>
+
+<!--Email Address - name can be up to 64 characters, domain name can be up to 252 characters in length-->
+        <label for="e_mail">Email Address:</label><br>
+        <input type="text" id="e_mail" name="e_mail"><br>
+
+<!--Confirm Email - name can be up to 64 characters, domain name can be up to 252 characters in length-->
+        <label for="confirm_email">Confirm Email Address:</label><br>
+        <input type="text" id="confirm_email" name="email"><br><br>
+
+<!--Meal Preferences, non-vegetarian, vegetarian, and vegan-->
+        <label>Meal Preference:</label>
+<!--Non-Vegetarian-->
+        <input type="radio" id="non_veg" name="meal" value="non_veg">
+        <label for="non_veg">Non-Vegetarian</label>
+<!--Vegetarian-->
+        <input type="radio" id="veggie" name="meal" value="veggie">
+        <label for="veggie">Vegetarian</label>
+<!--Vegan-->       
+        <input type="radio" id="vegan" name="meal" value="vegan">
+        <label for="vegan">Vegan</label><br><br>
+
+<!--Contact Method-->
+        <label>Preferred Contact Method:</label><br>
+        <!--Phone Number-->
+                <label for="phonenum">Phone Number</label>
+                <input type="checkbox" id="phonenum" name="phonenum">
+        <!--Email-->
+                <label for="email_choice">Email</label>
+                <input type="checkbox" id="email_choice" name="email_choice"><br>
+        <!--Snailmail-->
+                <label for="snailmail">Mail</label>
+                <input type="checkbox" id="snailmail" name="snailmail">
+        <!--LinkedIn-->
+                <label for="linkedin">LinkedIn</label>
+                <input type="checkbox" id="linkedin" name="linkedin"><br><br>
+
+<!--Comments, characters can be no more than 250 characters in length-->
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="comment" rows="5" cols="20" onfocus="this.value=''">Write Comments Here</textarea><br>
+
+<!--Submit Button-->
+        <button type="submit">Submit</button>
+<!--Reset Button-->
+        <button type="reset" value="Reset">Reset</button>
+<!--This div is an error that will pop up in red-->
+        <div id="error" style=color:red;></div>
+        </form>
+<!--This calls the javascript validation-->
+<script src="project2.js"></script>
+</body>
+</html>
