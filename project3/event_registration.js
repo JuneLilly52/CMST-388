@@ -76,13 +76,28 @@ function completePurchase(){
 	var name = document.getElementById("name");
 	var msgname = document.getElementById("msgname");
 	var msgemail = document.getElementById("msgemail");
+	var confirm_email = email.value.split('@');
+	var good_email = false;
 	if (email.value === ''){
 		msgemail.textContent= "No email provided";
 		email.style.backgroundColor = "red";
 	}
+	else if(confirm_email.length!=2) {
+		msgemail.textContent= "Invalid email provided";
+		email.style.backgroundColor = "red";
+	}
+	else if (confirm_email[0].length===0 || confirm_email[0].length > 64){
+		msgemail.textContent= "Invalid email provided";
+		email.style.backgroundColor = "red";
+    }
+    else if (confirm_email[1].length===0 || confirm_email[1].length > 252){
+		msgemail.textContent= "Invalid email provided";
+		email.style.backgroundColor = "red";
+    }
 	else {
 		email.style.backgroundColor="white";
 		msgemail.textContent="";
+		good_email=true;
 	}
 
 	if (name.value === ''){
@@ -93,10 +108,9 @@ function completePurchase(){
 		name.style.backgroundColor="white";
 		msgname.textContent="";
 	}
-	if(name.value != "" && email.value!= ""){
+	if(name.value != "" && good_email===true){
 		clearInterval(x);
 		alert("Thank you for your purchase! Your total cost today is " + document.getElementById("totalCost").value);
 	}
 }
-
   
