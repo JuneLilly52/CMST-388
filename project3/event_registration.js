@@ -57,7 +57,7 @@ function calculateTotal(){
 	var msgTickets = document.getElementById("msgTickets");
 	var contactInformation = document.getElementById("contactInformation");
 	if (numTickets.value < minTickets || numTickets.value > maxTickets || isNaN(numTickets.value)){
-		msgTickets.textContent= "Error, you can only purchase up to three tickets"
+		msgTickets.textContent= "Error, you can only purchase up to three tickets";
 		numTickets.style.backgroundColor = 'red';
 		contactInformation.style.display = "none";
 		
@@ -87,7 +87,7 @@ function completePurchase(){
 
 	if (name.value === ''){
 		msgname.textContent = "No name provided";
-		name.style.backgroundColor = "red"
+		name.style.backgroundColor = "red";
 	}
 	else{
 		name.style.backgroundColor="white";
@@ -98,4 +98,5 @@ function completePurchase(){
 		alert("Thank you for your purchase! Your total cost today is " + document.getElementById("totalCost").value);
 	}
 }
+
   
